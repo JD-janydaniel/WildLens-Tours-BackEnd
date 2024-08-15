@@ -4,6 +4,9 @@ import dotenv from "dotenv";
 import connectDB from "./Database/config.js";
 import authRouter from "./Routers/authRouter.js";
 import userRouter from "./Routers/userRouter.js";
+import tourRouter from "./Routers/tourRouter.js";
+import tourGuideRouter from "./Routers/tourGuideRouter.js";
+import bookingRouter from "./Routers/bookingRouter.js";
 import cookieParser from "cookie-parser";
 
 dotenv.config();
@@ -41,6 +44,9 @@ app.get("/", (req, res) => {
 //Import routes
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+app.use("/api/tour", tourRouter);
+app.use("/api/guide", tourGuideRouter);
+app.use("/api/booking", bookingRouter);
 
 //listeners
 app.listen(process.env.PORT, () => {
