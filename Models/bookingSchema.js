@@ -51,12 +51,12 @@ const bookingSchema = new mongoose.Schema(
     },
     trancationId:{
       type: String,
-      required: true,
+      default: "bhjjhbjcdnislnkjsbc@janydaniel",
     },
     paymentStatus: {
       type: String,
       enum: ["pending", "completed", "failed"],
-      default: "pending",
+      default: "completed",
     },
   },
   { timestamps: true }

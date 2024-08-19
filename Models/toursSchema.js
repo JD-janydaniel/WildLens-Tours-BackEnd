@@ -21,7 +21,7 @@ const toursSchema = new mongoose.Schema(
       required: true,
     },
     price: {
-      type: Number,
+      type: String,
       required: true,
     },
       noOfDays: {
@@ -32,6 +32,10 @@ const toursSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Review",
     },
+    averageRating: {
+      type: Number,
+      default: 0,
+    }
   },
   { timestamps: true }
 );

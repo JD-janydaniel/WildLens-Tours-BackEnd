@@ -11,7 +11,7 @@ const reviewSchema = new mongoose.Schema({
         ref: 'Tour',
         required: true
     },
-    comments: {
+    review: {
         type: String,
         required: true
     },
@@ -21,6 +21,10 @@ const reviewSchema = new mongoose.Schema({
         max: 5,
         required: true
     },
+    reviewDate: {
+        type: Date,
+        default: Date.now,
+      },
 },{timestamps:true});
 
 const Review = mongoose.model('Review', reviewSchema);

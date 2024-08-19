@@ -7,6 +7,7 @@ import userRouter from "./Routers/userRouter.js";
 import tourRouter from "./Routers/tourRouter.js";
 import tourGuideRouter from "./Routers/tourGuideRouter.js";
 import bookingRouter from "./Routers/bookingRouter.js";
+import reviewRouter from "./Routers/reviewRouter.js";
 import cookieParser from "cookie-parser";
 
 dotenv.config();
@@ -47,6 +48,7 @@ app.use("/api/user", userRouter);
 app.use("/api/tour", tourRouter);
 app.use("/api/guide", tourGuideRouter);
 app.use("/api/booking", bookingRouter);
+app.use("/api/review", reviewRouter);
 
 //listeners
 app.listen(process.env.PORT, () => {

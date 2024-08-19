@@ -39,14 +39,41 @@ export const createTours = async (req, res, next) => {
   }
 };
 
+
 export const getAllTours = async (req, res, next) => {
   try {
-    const tours = await Tours.find();
+    const { search } = req.query;
+    let filter = {};
+
+    if (search) {
+      const regex = new RegExp(search, "i"); // i for case-insensitive search
+      const searchAsNumber = parseFloat(search);
+
+      // Filter to match location or exact noOfDays, and less than or equal price
+      filter = {
+        $or: [
+          { location: regex },
+          { noOfDays: regex },
+          // Check if search term is a valid number and if so filter by price
+          ...(isNaN(searchAsNumber)
+            ? []
+            : [{ price: { $lte: searchAsNumber } }]),
+        ],
+      };
+    }
+
+    const tours = await Tours.find(filter);
+    
+    if (tours.length === 0) {
+      // No tours found for the search term
+      return next(errorHandler(404, "No tours found for the search term"));
+    }
     res.status(200).json({ message: "All tours fetched successfully", tours });
   } catch (error) {
     next(error);
   }
 };
+
 
 export const getTourById = async (req, res, next) => {
   try {
@@ -67,7 +94,7 @@ export const updateTours = async (req, res, next) => {
     const {id} = req.params;
     const { title, description, image, location, price, noOfDays } = req.body;
     const updatedTour = await Tours.findByIdAndUpdate(
-      { _id: id },
+      id,
       {
         $set: {
           title: title,
