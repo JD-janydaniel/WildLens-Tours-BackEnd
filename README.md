@@ -145,5 +145,7 @@ https://wildlens-tours-backend-culd.onrender.com
    <li>/api/review/getTourReviews/:id</li>
    <li>Above end point is used to calculate the average rating's and use to display the ratings against the tour's</li>
  </ul>
- 
+
+ # Backend Deployment Link
+ https://wildlens-tours-backend-culd.onrender.com
 
