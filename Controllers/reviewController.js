@@ -13,15 +13,6 @@ export const createReview = async (req, res, next) => {
   }
 };
 
-// export const getTourReviews = async (req, res, next) => {
-//   try {
-//     const { tourId } = req.params;
-//     const reviews = await Review.find({ tourId }).populate("userId", "name");
-//     res.status(200).json({ message: "Reviews fetched successfully", reviews });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
 
 // Get Reviews and Average Rating for a Specific Tour
 export const getTourReviews = async (req, res, next) => {

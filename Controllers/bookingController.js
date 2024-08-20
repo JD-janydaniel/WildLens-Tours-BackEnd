@@ -1,5 +1,6 @@
 import Booking from "../Models/bookingSchema.js";
 import { errorHandler } from "../Utils/Error.js";
+import Tours from "../Models/toursSchema.js";
 
 export const cerateBooking = async (req, res, next) => {
   try {
@@ -35,21 +36,6 @@ export const cerateBooking = async (req, res, next) => {
   }
 };
 
-// export const getAllBookingsById = async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
-//     console.log(id);
-//     const bookings = await Booking.find({ userid:id }).populate(
-//       "tourId",
-//       "title location price"
-//     ); // Filter bookings by id
-//     res
-//       .status(200)
-//       .json({ message: "Bookings fetched successfully", bookings });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
 
 export const getAllBookingsById = async (req, res, next) => {
   try {
