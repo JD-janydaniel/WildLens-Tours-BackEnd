@@ -108,7 +108,7 @@ export const forgotPassword = async (req, res) => {
     const token = jwt.sign({ _id: user.id }, process.env.JWT_SECRET_KEY, {
       expiresIn: "1h",
     });
-    const passwordReset = `http://localhost:5173/reset-password/${user.id}/${token}`;
+    const passwordReset = `https://wildlens-tours-jany-daniel.netlify.app/reset-password/${user.id}/${token}`;
     const mailLink = await mail(user.email, "Reset Password", passwordReset);
     if (mailLink) {
       return res.status(200).json({
