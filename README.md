@@ -1,5 +1,8 @@
 # WildLens Tours Backend
+
 ## Base URL
+The base URL for the WildLens Tours backend is:
+
 https://wildlens-tours-backend-culd.onrender.com
 
 ## The above mentioned URL is the base URL of WildLens Tours
@@ -20,132 +23,112 @@ https://wildlens-tours-backend-culd.onrender.com
 <li>User can also logout from the account</li></li>
   </ul>
 
-  ## Register User
-  <ul>
-    <li>Method: POST</li>
-    <li>/api/auth/register-user</li>
-    <li>By using this end point we can register as regular User or Admin</li>
-  </ul>
+  
+## API Overview
 
-  ## Login User
-  <ul>
-    <li>Method: POST</li>
-    <li>/api/auth/login-user</li>
-    <li>By using the above end point we can login as regular User or Admin</li>
-  </ul>
+The WildLens Tours API provides endpoints for managing users, tours, bookings, and reviews. Below is a summary of the available endpoints and their functionalities.
 
-  ## Google OAuth
-  <ul>
-  <li>Method: POST</li>
-  <li>/api/auth/google-auth</li>
-  <li>By using the above end point we can register and login as regular User or Admin</li>
-  </ul>
+### User Management
 
-  ## Forgot Password
-  <ul>
-    <li>Method: POST</li>
-    <li>api/auth/forgot-password</li>
-    <li>By using the above end point we can send a email contain's a link for the reset password to registered email</li>
-  </ul>
+- **Register User**
+  - **Method:** POST
+  - **Endpoint:** `/api/auth/register-user`
+  - **Description:** Register as a regular user or admin. 
 
-  ## Reset Password
-<ul>
-  <li>Method: POST</li>
-  <li>/api/auth/reset-password/:id/:token</li>
-  <li>By using the above end point we can reset the password</li>
-</ul>
+- **Login User**
+  - **Method:** POST
+  - **Endpoint:** `/api/auth/login-user`
+  - **Description:** Log in as a regular user or admin.
 
- ## Update/Edit User
- <ul>
-   <li>Method: PUT</li>
-   <li>/api/user/update-user/:id</li>
-   <li>By using the above end point we can update/edit the user Profile and also can update the profile picture</li>
- </ul>
+- **Google OAuth**
+  - **Method:** POST
+  - **Endpoint:** `/api/auth/google-auth`
+  - **Description:** Register and log in using Google OAuth.
 
- ## Delete User
- <ul>
-   <li>Method: DELETE</li>
-   <li>/api/user/delete-user/:id</li>
-   <li>By using the above end point we can delete the user account</li>
- </ul>
+- **Forgot Password**
+  - **Method:** POST
+  - **Endpoint:** `/api/auth/forgot-password`
+  - **Description:** Send a password reset link to the registered email.
 
- ## Create Tour's
- <ul>
-   <li>Method: POST</li>
-   <li>/api/tour/create-tours</li>
-   <li>By using the above end point Admin only can create tour's package</li>
- </ul>
+- **Reset Password**
+  - **Method:** POST
+  - **Endpoint:** `/api/auth/reset-password/:id/:token`
+  - **Description:** Reset the password using the provided token.
 
- ## Get All Tours
- <ul>
-   <li>Method: GET</li>
-   <li>/api/tour/getAllTours</li>
-   <li>By using the above end point we get and display the tour's in landing page</li>
- </ul>
+- **Update/Edit User**
+  - **Method:** PUT
+  - **Endpoint:** `/api/user/update-user/:id`
+  - **Description:** Update/edit user profile and profile picture.
 
- ## Get Tours By Id
- <ul>
-   <li>Method: GET</li>
-   <li>/api/tour/getToursById/:id</li>
-   <li>By using the above end point we get a tour by it's id</li>
- </ul>
+- **Delete User**
+  - **Method:** DELETE
+  - **Endpoint:** `/api/user/delete-user/:id`
+  - **Description:** Delete the user account.
 
- ## Update/Edit Tours
- <ul>
-   <li>Method: PUT</li>
-   <li>/api/tour/update-tours/:id</li>
-   <li>By using the above end point Admin only can update/edit the tour's</li>
- </ul>
+### Tour Management
 
- ## Delete Tours
- <ul>
-   <li>Method: DELETE</li>
-   <li>/api/tour/delete-tours/:id</li>
-   <li>By using the above end point Admin only can delete the tours</li>
- </ul>
+- **Create Tours**
+  - **Method:** POST
+  - **Endpoint:** `/api/tour/create-tours`
+  - **Description:** Admin only endpoint for creating tour packages.
 
- ## Create Tour Guide 
- <ul>
-   <li>Method: POST</li>
-   <li>/api/guide/create-tour-Guide</li>
-   <li>By using the above end point Admin can only create the Guide</li>
- </ul>
+- **Get All Tours**
+  - **Method:** GET
+  - **Endpoint:** `/api/tour/getAllTours`
+  - **Description:** Retrieve and display all tours on the landing page.
 
- ## Get All Guide
- <ul>
-   <li>Method: GET</li>
-   <li>/api/guide/getAllTourGuides</li>
-   <li>BY using the above end point user can get and view all Tour Guide</li>
- </ul>
+- **Get Tour By ID**
+  - **Method:** GET
+  - **Endpoint:** `/api/tour/getToursById/:id`
+  - **Description:** Retrieve a specific tour by its ID.
 
- ## Create Booking
- <ul>
-   <li>Method: POST</li>
-   <li>/api/booking/create-booking</li>
-   <li>By using the end point user can book a tour</li>
- </ul>
+- **Update/Edit Tours**
+  - **Method:** PUT
+  - **Endpoint:** `/api/tour/update-tours/:id`
+  - **Description:** Admin only endpoint for updating tour details.
 
- ## Get All Booking By Id
- <ul>
-   <li>Method: GET</li>
-   <li>/api/booking/getAllBooking/:id</li>
-   <li>By using the above end point the user can view the booking's againest the user</li>
- </ul>
+- **Delete Tours**
+  - **Method:** DELETE
+  - **Endpoint:** `/api/tour/delete-tours/:id`
+  - **Description:** Admin only endpoint for deleting tours.
 
- ## Create Review
- <ul>
-   <li>Method: POST</li>
-   <li>/api/review/create-review</li>
-   <li>By using the above end point the user can create/give a review against the tour's</li>
- </ul>
+### Tour Guide Management
 
- ## Get Review
- <ul>
-   <li>Method: GET</li>
-   <li>/api/review/getTourReviews/:id</li>
-   <li>Above end point is used to calculate the average rating's and use to display the ratings against the tour's</li>
- </ul>
+- **Create Tour Guide**
+  - **Method:** POST
+  - **Endpoint:** `/api/guide/create-tour-Guide`
+  - **Description:** Admin only endpoint for creating tour guides.
 
- # Backend Deployment Link
+- **Get All Guides**
+  - **Method:** GET
+  - **Endpoint:** `/api/guide/getAllTourGuides`
+  - **Description:** Retrieve and view all tour guides.
+
+### Booking Management
+
+- **Create Booking**
+  - **Method:** POST
+  - **Endpoint:** `/api/booking/create-booking`
+  - **Description:** Book a tour.
+
+- **Get All Bookings By User ID**
+  - **Method:** GET
+  - **Endpoint:** `/api/booking/getAllBooking/:id`
+  - **Description:** Retrieve all bookings made by a specific user.
+
+### Review Management
+
+- **Create Review**
+  - **Method:** POST
+  - **Endpoint:** `/api/review/create-review`
+  - **Description:** Submit a review and rating for a tour.
+
+- **Get Reviews**
+  - **Method:** GET
+  - **Endpoint:** `/api/review/getTourReviews/:id`
+  - **Description:** Retrieve reviews for a specific tour and calculate the average rating.
+
+## Backend Deployment Link
+The backend is deployed at:
  https://wildlens-tours-backend-culd.onrender.com
 
